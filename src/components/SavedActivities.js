@@ -58,6 +58,8 @@ export default function SavedActivities() {
   }, [saved]);
 
   useEffect(() => {
+    if (filteredActivitities.length === 0) setFilteredActivities(saved);
+
     setFilteredActivities(
       saved.filter((activity) => {
         if (
@@ -82,7 +84,7 @@ export default function SavedActivities() {
         return true;
       })
     );
-  }, [filters]);
+  }, [filters, saved]);
 
   if (isFetching) {
     return (
