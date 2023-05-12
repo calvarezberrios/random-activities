@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { ActivityButton, CardContainer } from "./styled/activity";
 import { useNavigate } from "react-router-dom";
 import ActivityCard from "./ActivityCard";
 import { useDispatch, useSelector } from "react-redux";
@@ -83,6 +82,8 @@ export default function SavedActivities() {
         return true;
       })
     );
+
+    // eslint-disable-next-line
   }, [filters, saved]);
 
   if (isFetching) {
