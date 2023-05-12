@@ -140,7 +140,7 @@ export default function SavedActivities() {
         >
           <option value="all">All Participants</option>
           {numOfParticipants.map((value, i) => (
-            <option value={value}>
+            <option value={value} key={i}>
               {value} Participant{parseInt(value) > 1 && "s"}
             </option>
           ))}
