@@ -107,7 +107,17 @@
       "email": "sara_alvarez321@yahoo.com",
       "username": "sjohnson",
       "password": "password",
-      "bookmarks": [],
+      "bookmarks": [
+        {
+          "activity": "Learn how to make an Alexa skill",
+          "type": "education",
+          "participants": 1,
+          "price": 0,
+          "link": "https://developer.amazon.com/en-US/docs/alexa/custom-skills/steps-to-build-a-custom-skill.html",
+          "key": "1592381",
+          "accessibility": 0.1
+        }
+      ],
       "id": 1003
     }
   ]
