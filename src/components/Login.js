@@ -56,7 +56,7 @@ export default function Login() {
           onChange={handleChange}
         />
         <LoginButton type="submit">Log in</LoginButton>
-        <Link className="registerLink" to="#">
+        <Link className="registerLink" to="/register">
           Don't have an account?
         </Link>
       </LoginForm>
