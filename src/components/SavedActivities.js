@@ -5,6 +5,7 @@ import ActivityCard from "./ActivityCard";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSavedActivities } from "../actions/activityActions";
 import { ErrorWrapper, Spinner } from "./styled";
+import { Heading, IntroText } from "./styled/savedactivities";
 
 export default function SavedActivities() {
   const { saved, isFetching, error } = useSelector((state) => state.activities);
@@ -32,7 +33,12 @@ export default function SavedActivities() {
               <p>{error}</p>
             </ErrorWrapper>
           ) : (
-            <>
+            <div>
+              <IntroText>
+                Here are the activities you have saved. You can filter them by
+                type and/or participants.
+              </IntroText>
+
               <ActivityButton onClick={() => navigate("/random-activities")}>
                 Find New Activities
               </ActivityButton>
@@ -43,7 +49,7 @@ export default function SavedActivities() {
                   data-testid="activity-card"
                 />
               ))}
-            </>
+            </div>
           )}
         </>
       )}
