@@ -45,9 +45,15 @@ export const fetchSavedActivities = (user) => (dispatch) => {
   axiosWithAuth(user.token)
     .get(`/api/saved-activities/${user.id}`)
     .then((res) => {
-      dispatch(fetchSavedSuccess(res.data));
+      if (res.data.error) {
+        dispatch(fetchError(res.data.error));
+      } else {
+        dispatch(fetchSavedSuccess(res.data));
+      }
     })
-    .catch((err) => dispatch(fetchError(err.response.data.message)));
+    .catch((err) =>
+      dispatch(fetchError("There was an error fetching your saved activities"))
+    );
 };
 
 export const updateActivities = (activities, user) => (dispatch) => {
