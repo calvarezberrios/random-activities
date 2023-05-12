@@ -2,12 +2,16 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-const Title = styled.h1`
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 20px;
+const IntroText = styled.p`
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
 `;
 
 const Filters = styled.div`
@@ -32,10 +36,19 @@ const FilterSelect = styled.select`
   font-size: 16px;
 `;
 
+const ContentWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+`;
+
 const Table = styled.table`
+  flex: 1;
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 20px;
+  margin-right: 50px;
 
   th {
     background-color: #f2f2f2;
@@ -66,10 +79,11 @@ const Preview = styled.div`
 
 export {
   Wrapper,
-  Title,
+  IntroText,
   Filters,
   FilterInput,
   FilterSelect,
+  ContentWrapper,
   Table,
   TableRow,
   Preview,
