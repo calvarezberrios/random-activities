@@ -6,15 +6,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSavedActivities } from "../actions/activityActions";
 import { ErrorWrapper, Spinner } from "./styled";
 import {
+  Button,
   ContentWrapper,
   FilterInput,
   FilterSelect,
   Filters,
-  Heading,
   IntroText,
   Preview,
   Table,
-  TableHead,
   TableRow,
   Wrapper,
 } from "./styled/savedactivities";
@@ -145,6 +144,9 @@ export default function SavedActivities() {
             </option>
           ))}
         </FilterSelect>
+        <Button onClick={() => navigate("/random-activities")}>
+          Find new Activities
+        </Button>
       </Filters>
       <ContentWrapper>
         <Table>

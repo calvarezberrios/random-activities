@@ -77,6 +77,34 @@ const Preview = styled.div`
   margin-top: 20px;
 `;
 
+const Button = styled.button`
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  margin: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #3e8e41;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: #2d702b;
+    transform: translateY(1px);
+  }
+`;
+
 export {
   Wrapper,
   IntroText,
@@ -87,4 +115,5 @@ export {
   Table,
   TableRow,
   Preview,
+  Button,
 };
