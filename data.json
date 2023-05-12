@@ -54,13 +54,13 @@
           "accessibility": 0
         },
         {
-          "activity": "Clean out your car",
-          "type": "busywork",
-          "participants": 1,
+          "activity": "Invite some friends over for a game night",
+          "type": "social",
+          "participants": 4,
           "price": 0,
           "link": "",
-          "key": "2896176",
-          "accessibility": 0.08
+          "key": "6613428",
+          "accessibility": 0.2
         }
       ]
     },
