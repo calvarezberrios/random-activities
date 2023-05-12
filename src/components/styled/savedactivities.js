@@ -64,13 +64,14 @@ const Table = styled.table`
     cursor: pointer;
 
     &:hover {
-      background-color: #f9f9f9;
+      background-color: #f9c74f;
     }
   }
 `;
 
 const TableRow = styled.tr`
-  background-color: ${(props) => (props.active ? "#f9f9f9" : "inherit")};
+  background-color: ${(props) => (props.active ? "#f9c74f" : "inherit")};
+  font-weight: ${(props) => (props.active ? "bold" : "inherit")};
 `;
 
 const Preview = styled.div`
