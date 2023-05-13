@@ -129,7 +129,7 @@ app.patch("/api/saved-activities/:id", authenticator, async (req, res) => {
 
 app.use(express.static(path.join(__dirname, "build")));
 
-app.use((req, res, next) => {
+app.get("/", (req, res, next) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
