@@ -19,9 +19,9 @@ app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "build")));
 app.use(express.static("public"));
 
-app.use((req, res, next) => {
- res.sendFile(path.join(__dirname, "build", "public", "index.html"));
-});
+// app.use((req, res, next) => {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 
 function authenticator(req, res, next) {
   const { authorization } = req.headers;
@@ -33,7 +33,7 @@ function authenticator(req, res, next) {
 }
 
 app.get("/api", (req, res) => {
-     res.send({ message: "api is up" });
+  res.send({ message: "api is up" });
 });
 
 app.post("/api/login", async (req, res) => {
