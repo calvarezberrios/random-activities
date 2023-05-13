@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const morgan = require("morgan");
+const path = require("path");
 const port = process.env.PORT || 5001;
 const app = express();
 //const data = require("./data");
@@ -15,7 +16,8 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-app.use("/",express.static("public"));
+app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static("public"));
 
 
 function authenticator(req, res, next) {
