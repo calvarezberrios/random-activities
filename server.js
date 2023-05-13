@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-app.use(express.static("public"));
+app.use("/",express.static("public"));
 
 
 function authenticator(req, res, next) {
