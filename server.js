@@ -24,6 +24,10 @@ function authenticator(req, res, next) {
   }
 }
 
+app.get("/api", (req, res) => {
+     res.send({ message: "api is up" });
+});
+
 app.post("/api/login", async (req, res) => {
   const { username, password } = req.body;
 
