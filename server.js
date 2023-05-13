@@ -16,12 +16,12 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-app.use(express.static("build"));
+app.use(express.static(path.join(__dirname, "build")));
 app.use(express.static("public"));
 
-app.use((req, res, next) => {
-  res.sendFile("build", "index.html");
-});
+// app.use((req, res, next) => {
+ // res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 
 function authenticator(req, res, next) {
   const { authorization } = req.headers;
