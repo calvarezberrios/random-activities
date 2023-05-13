@@ -16,12 +16,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-app.use(express.static(path.join(__dirname, "build")));
-
-// app.use((req, res, next) => {
-//   res.sendFile(path.join(__dirname, "build", "index.html"));
-// });
-
 function authenticator(req, res, next) {
   const { authorization } = req.headers;
   if (authorization === token) {
@@ -131,6 +125,12 @@ app.patch("/api/saved-activities/:id", authenticator, async (req, res) => {
     .then((res) => res.data);
 
   res.status(200).json(result);
+});
+
+app.use(express.static(path.join(__dirname, "build")));
+
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
