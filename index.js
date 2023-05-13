@@ -130,7 +130,7 @@ app.patch("/api/saved-activities/:id", authenticator, async (req, res) => {
 app.use(express.static(path.join(__dirname, "build")));
 
 app.get("/*", (req, res, next) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile("index.html", { root: path.join(__dirname, "build") });
 });
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
