@@ -16,8 +16,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-app.use(express.static(path.join(__dirname, "build")));
-
 function authenticator(req, res, next) {
   const { authorization } = req.headers;
   if (authorization === token) {
@@ -128,6 +126,8 @@ app.patch("/api/saved-activities/:id", authenticator, async (req, res) => {
 
   res.status(200).json(result);
 });
+
+app.use(express.static(path.join(__dirname, "build")));
 
 app.get("/*", (req, res, next) => {
   res.sendFile("index.html", { root: path.join(__dirname, "build") });
